@@ -1,7 +1,6 @@
 let text = "";
 
-chrome.runtime.onMessage.addListener((message,sender, sendResponse) =>{
-  
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) =>{  
   if (message == "get-selected-text"){
     if (text == "") {
       sendResponse({
@@ -18,7 +17,6 @@ chrome.runtime.onMessage.addListener((message,sender, sendResponse) =>{
 });
 
 function genericOnClick(info){
-
   if (info.menuItemId == "summarize"){
     text = info.selectionText;
     try{
@@ -31,11 +29,7 @@ function genericOnClick(info){
 
 chrome.contextMenus.onClicked.addListener((info) => genericOnClick(info));
 
-
 chrome.runtime.onInstalled.addListener(() => {
-    chrome.action.setBadgeText({
-      text: "OFF",
-    });
     chrome.contextMenus.create({
       title: 'Summarize this',
       id: 'summarize',
