@@ -7,5 +7,7 @@
 ```js
 // config.js
 export const OPEN_AI_API_KEY = "<YOUR_OPEN_AI_API_KEY>"
-export const DEEP_SEEK_API = "<YOUR_DEEP_SEEK_API_KEY>"
+export const DEEP_SEEK_API_KEY = "<YOUR_DEEP_SEEK_API_KEY>"
 ```
+
+![Example Image](./images/example.png)
